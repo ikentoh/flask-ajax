@@ -2,6 +2,14 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <!--jQuery-->
+    <!-- https://code.jquery.com/ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!--local js-->
+    <script src="{{ url_for('static', filename='js/blend.js') }}"></script>
+
     <title>flask ajax</title>
 </head>
 
@@ -9,6 +17,10 @@
     <div>
         <img src="{{ src_left }}">
         <img src="{{ src_right }}">
+    </div>
+    <div>
+        <img id="blend-image">
+        <input type="range" id="blend-slider" min="0" max="100" value="50">
     </div>
 
 

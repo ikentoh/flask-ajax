@@ -8,6 +8,9 @@ from src.utils import blend
 
 SRC_HEAD = 'data:image/png;base64,'
 
+b64_left = str()
+b64_right = str()
+
 
 #
 # SSポップアップ
@@ -21,6 +24,9 @@ def register(app):
         """
         初期ページ
         """
+        global b64_left
+        global b64_right
+
         b64_left = get_image_b64('left.png')
         b64_right = get_image_b64('right.png')
 
@@ -31,6 +37,18 @@ def register(app):
             src_left=src_left,
             src_right=src_right
         )
+
+    @app.route(r'/blend', methods=['POST'])
+    def get_blend():
+        """
+        blend画像を生成し、ajax通信に応じて返却する
+        """
+        blend_alpha = int(request.get_data()) / 100
+        b64_blend = blend.generate(b64_left, b64_right, blend_alpha)
+
+        src_blend = SRC_HEAD + b64_blend
+
+        return src_blend
 
 
     def get_image_b64(filename):
