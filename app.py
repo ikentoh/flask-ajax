@@ -3,6 +3,8 @@ import os
 from flask import Flask
 from flask_cors import CORS
 
+from src.endpoints import index
+
 
 #
 # flask app本体定義
@@ -18,10 +20,8 @@ secret_key = os.urandom(16)
 print('current secret_key: ', secret_key)
 app.secret_key = secret_key
 
-
-@app.route(r'/', methods=['GET'])
-def index():
-    return 'hello, world!'
+# エンドポイントをappへ登録
+index.register(app)
 
 
 if __name__ == '__main__':
