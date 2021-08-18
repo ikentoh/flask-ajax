@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  flask:
+    build:
+      context: ./
+    container_name: 'flask'
+    tty: true
+    ports:
+      - 8050:8050
+    volumes:
+      - ./app.py:/workspace/app.py
+    working_dir: /workspace
+    command: python app.py
