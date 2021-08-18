@@ -1,2 +1,6 @@
 Flask
 flask-cors
+numpy
+opencv-contrib-python
+opencv-python
+pillow
