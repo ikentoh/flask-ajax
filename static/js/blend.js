@@ -8,7 +8,7 @@ $(function(){
 });
 
 function updateBlend() {
-  // flaskのss/blendエンドポイントにリクエストする
+  // flaskの/blendエンドポイントにリクエストする
   $.ajax({
     type: 'POST',
     url: '/blend',
