@@ -13,7 +13,7 @@ b64_right = str()
 
 
 #
-# SSポップアップ
+# トップページの表示
 #
 
 
@@ -37,6 +37,7 @@ def register(app):
             src_left=src_left,
             src_right=src_right
         )
+
 
     @app.route(r'/blend', methods=['POST'])
     def get_blend():
