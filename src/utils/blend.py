@@ -6,7 +6,7 @@ import numpy as np
 
 
 #
-# SS検証
+# 合成画像の生成
 #
 
 def generate(b64_left, b64_right, alpha):
